@@ -4,10 +4,10 @@ const scrollLeftBtn = document.querySelector('.scroll-btn.left');
 const scrollRightBtn = document.querySelector('.scroll-btn.right');
 const viewAllBtn = document.getElementById('viewAllBtn');
 
-// Scroll behavior for left/right buttons
+
 scrollRightBtn.addEventListener('click', () => {
   scrollContainer.scrollBy({
-    left: 300, // distance to scroll
+    left: 300, 
     behavior: 'smooth'
   });
 });
@@ -19,7 +19,7 @@ scrollLeftBtn.addEventListener('click', () => {
   });
 });
 
-// VIEW ALL button toggle
+
 let viewAllActive = false;
 
 viewAllBtn.addEventListener('click', () => {
@@ -111,7 +111,7 @@ products.forEach(product => {
   addBtn.addEventListener('click', () => {
     const quantity = parseInt(product.querySelector('.quantity').value);
 
-    // Check if product already in cart
+   
     const existing = cart.find(item => item.name === name);
 
     if (existing) {
@@ -121,17 +121,17 @@ products.forEach(product => {
     }
 
     alert(`${quantity} × ${name} added to cart ✅`);
-    console.log(cart); // You can later replace this with a cart popup or checkout feature
+    console.log(cart); 
   });
 });
 
-// SEE MORE button toggle
+
 if (seeMoreBtn) {
   let expanded = false;
 
   seeMoreBtn.addEventListener('click', () => {
     const allProducts = document.querySelectorAll('.product');
-    const hiddenProducts = Array.from(allProducts).slice(6); // show first 6, hide rest
+    const hiddenProducts = Array.from(allProducts).slice(6); 
 
     if (!expanded) {
       hiddenProducts.forEach(p => (p.style.display = 'block'));
@@ -144,7 +144,7 @@ if (seeMoreBtn) {
     expanded = !expanded;
   });
 
-  // Hide extra products by default
+
   const initialProducts = Array.from(products).slice(6);
   initialProducts.forEach(p => (p.style.display = 'none'));
 }
@@ -157,7 +157,7 @@ const searchInput = document.querySelector('.search-bar input[type="search"]');
 const searchButton = document.querySelector('.search-bar .search-btn');
 const allProducts = document.querySelectorAll('.product');
 
-// Function to filter products
+
 function searchProducts() {
   const query = searchInput.value.trim().toLowerCase();
   let found = false;
@@ -172,7 +172,7 @@ function searchProducts() {
     }
   });
 
-  // Show all products again if search box is empty
+  
   if (query === '') {
     allProducts.forEach(product => (product.style.display = 'block'));
   }
@@ -181,7 +181,7 @@ function searchProducts() {
 // Live search (while typing)
 searchInput.addEventListener('input', searchProducts);
 
-// Button click (mobile tap)
+
 searchButton.addEventListener('click', searchProducts);
 
   const hamburger = document.getElementById('hamburger');

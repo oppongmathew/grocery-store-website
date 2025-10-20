@@ -217,10 +217,10 @@
   </header>
 
   <div class="checkout-container">
-    <!-- Cart Items -->
+    
     <div class="cart-items" id="cart-items"></div>
 
-    <!-- Checkout Summary -->
+    
     <div class="checkout-summary">
       <div class="summary-box">
         <h3>Order Summary</h3>
@@ -230,7 +230,7 @@
         </div>
       </div>
 
-      <!-- Checkout Form -->
+      
       <form id="checkout-form">
         <input type="text" id="name" placeholder="Full Name" required>
         <input type="email" id="email" placeholder="Email Address" required>
@@ -293,10 +293,10 @@
     checkoutForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // Clear cart
+     
       localStorage.removeItem("cart");
 
-      // Hide form + show success
+      
       document.querySelector(".checkout-container").style.display = "none";
       const successMessage = document.getElementById("success-message");
       successMessage.style.display = "block";

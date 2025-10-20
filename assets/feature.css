@@ -66,7 +66,7 @@
   border-color: #333;
 }
 
-/* hide arrows initially—they will be shown by JS if scrollable */
+
 .arrow { display: none; }
 
 /* RESPONSIVE ADJUSTMENTS */
@@ -444,7 +444,7 @@ body {
   font-size: 16px;
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
   .app-container {
     flex-direction: column;
