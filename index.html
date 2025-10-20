@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grocify Figma Design</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/feature.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/hero.css">
+  <link rel="stylesheet" href="assets/nav.css">
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    
+    <div class="logo">Grocify</div>
+
+    <div class="search-bar">
+  <input type="search" placeholder="Search products..." />
+  <button aria-label="Search" class="search-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" />
+  </button>
+</div>
+
+   <nav class="main-nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="contact.html">Contact</a>
+  <a class="cart" href="#" aria-label="Cart">🛒 <span class="badge">9</span></a>
+</nav>
+
+
+    <!-- Auth buttons -->
+    <div class="auth">
+      <a href="login.html" class="btn btn-outline">Log In</a>
+    <a href="register.html" class="btn btn-solid">Register</a>
+    </div>
+
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" id="closeBtn">&times;</div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="contact.html">Contact</a>
+
+  <div class="auth-mobile">
+    <a href="login.html" class="btn btn-outline">Log In</a>
+    <a href="register.html" class="btn btn-solid">Register</a>
+  </div>
+</div>
+
+  </div>
+</header>
+
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Buy your groceries and<br>have it delivered<br>to your doorstep with ease.</h1>
+        </div>
+
+        <div class="hero-media">
+        </div>
+      </div>
+    </section>
+  </main>
+
+<section class="flash-sales">
+  <h3><span class="dash-line"></span> Flash Sales <span class="dash-line"></span></h3>
+
+  <div class="countdown">
+    <div class="time-box">
+      <span>02</span>
+      <p>DAYS</p>
+    </div>
+    <div class="time-box">
+      <span>14</span>
+      <p>HOURS</p>
+    </div>
+    <div class="time-box">
+      <span>26</span>
+      <p>MINS</p>
+    </div>
+  </div>
+
+   <div class="category-wrapper">
+    <button class="scroll-btn left">&#10094;</button>
+    <div class="category-scroll">
+      <div class="category-card">
+        <img src="assets/images/Pork.jpg" alt="Vegetables">
+        <h4>Pork</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/Spinach.jpg" alt="Beverages">
+        <h4>Spinach</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/Beef Meat.jpg" alt="Noodles & Pasta">
+        <h4>Beef Meat</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/Apple.jpg" alt="Fruits">
+        <h4>Apple</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/Coca Cola.jpg" alt="Frozen Food">
+        <h4>Coca Cola</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/Bag of Rice.jpg" alt="Cooking Oil">
+        <h4>Bag of Rice</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/oil.webp" alt="Snacks">
+        <h4>Cooking Oil</h4>
+      </div>
+    </div>
+    <button class="scroll-btn right">&#10095;</button>
+  </div>  
+
+  <button class="view-btn" id="viewAllBtn">VIEW ALL</button>
+</section>
+
+<section class="categories">
+  <img src="assets/images/right flower.jpg" alt="decor" class="flower-decor">
+  <h2>Enjoy your favorite grocery items</h2>
+  <p>Shop by category</p>
+
+  <div class="category-wrapper">
+    <button class="scroll-btn left">&#10094;</button>
+    <div class="category-scroll">
+      <div class="category-card">
+        <img src="assets/images/vegetables.jpg" alt="Vegetables">
+        <h4>Vegetables</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/beverages.jpg" alt="Beverages">
+        <h4>Beverages</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/noodles.jpg" alt="Noodles & Pasta">
+        <h4>Noodles / Pasta</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/fruits.jpg" alt="Fruits">
+        <h4>Fruits</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/froozen food.jpg" alt="Frozen Food">
+        <h4>Frozen Food</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/oil.webp" alt="Cooking Oil">
+        <h4>Cooking Oil</h4>
+      </div>
+      <div class="category-card">
+        <img src="assets/images/snack.avif" alt="Snacks">
+        <h4>Snacks</h4>
+      </div>
+    </div>
+    <button class="scroll-btn right">&#10095;</button>
+  </div>
+
+  <button class="view-all">VIEW ALL</button>
+</section>
+
+  <section class="happy-clients">
+    <img src="assets/images/left flower.jpg" alt="Decorative flower" class="flower-top-right">
+    <div class="container">
+      <h2 class="section-title"><span></span> Happy Clients <span></span></h2>
+
+      <div class="clients-grid">
+        <div class="client-card">
+          <div class="stars">★★★★★</div>
+          <p class="date">May 15, 2022</p>
+          <p class="text">
+            Everything was great, super quick delivery, great packaging, attention to detail and very helpful staff. Thank you very much.
+          </p>
+          <div class="client-info">
+            <img src="assets/images/client1.jpg" alt="Client 1">
+            <p class="name">Robez Estabee</p>
+          </div>
+        </div>
+
+        <div class="client-card">
+          <div class="stars">★★★★★</div>
+          <p class="date">May 17, 2022</p>
+          <p class="text">
+            Great, super quick delivery, great service, good attention to detail and very helpful staff. Thank you guys.
+          </p>
+          <div class="client-info">
+            <img src="assets/images/client2.jpg" alt="Client 2">
+            <p class="name">Jekins Pheobe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-app">
+    <div class="container app-container">
+
+      <div class="phones">
+        <div class="phone-gradient"></div>
+        <img src="assets/images/phone.jpg" alt="Phones Image" class="phones-img">
+
+        <div class="store-buttons">
+          <a href="javascript:void(0)" class="store-card apple">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apple.svg" alt="Apple Logo">
+            <div>
+              <p class="small-text">Download on the</p>
+              <p class="bold-text">App Store</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" class="store-card apple">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleplay.svg" alt="Google Play Logo">
+            <div>
+              <p class="small-text">Download on the</p>
+              <p class="bold-text">Google Play Store</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="app-info">
+        <h2>Download Our<br> Mobile App</h2>
+        <p>Simple and efficient to use!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2 class="footer-logo">Grocify</h2>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="#">Customer Support</a></li>
+        <li><a href="#">Delivery Details</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get connected</h3>
+      <p>Join the conversation on social media and stay connected with our latest products and services.</p>
+     <div class="social-icons">
+       <a href="#"><i class="fa-brands fa-twitter"></i></a>
+       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+       <a href="#"><i class="fa-brands fa-instagram"></i></a>
+     </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Stay informed</h3>
+      <p>Subscribe to our notification to receive updates of new products and services.</p>
+      <a href="#" class="subscribe-link">Subscribe</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Privacy Policy | Terms of Use | Refund Policy</p>
+  </div>
+</footer>
+  <script src="assets/script.js">
+    // Select all add to cart buttons
+  const addToCartButtons = document.querySelectorAll('.add-cart');
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', e => {
+      const product = e.target.closest('.product');
+
+      const name = product.querySelector('h4').innerText;
+      const price = parseFloat(product.querySelector('p').innerText.replace(/[₦,]/g, ''));
+      const image = product.querySelector('img').src;
+      const quantity = parseInt(product.querySelector('.quantity').value);
+
+      // Get existing cart from localStorage or empty array
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if product already exists in cart
+      const existingProduct = cart.find(item => item.name === name);
+
+      if (existingProduct) {
+        // If exists, just increase its quantity
+        existingProduct.quantity += quantity;
+      } else {
+        // Otherwise, add new item
+        cart.push({ name, price, image, quantity });
+      }
+
+      // Save updated cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Feedback message
+      alert(`${name} added to cart successfully!`);
+    });
+  });
+  </script>
+</body>
+</html>

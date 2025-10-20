@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* 💥 Prevent horizontal scrolling */
+    background: #f9f9f9;
+    color: #333;
+  }
+
+  header {
+    background: green;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .about-section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: block;
+  }
+
+  .about-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .about-content h2 {
+    color: green;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .mission {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 1000px;
+  }
+
+  .mission h3 {
+    color: green;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .home-link {
+  display: inline-block;
+  margin: 1rem 2rem;
+  text-decoration: none;
+  color: #009879;
+  font-weight: 600;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+  @media (max-width: 768px) {
+    .about-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .about-image img {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      padding: 0 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>About Our Grocery Store</h1>
+  </header>
+    <a href="index.html" class="home-link">← Back to Home</a>
+  <section class="about-section">
+    <div class="about-image">
+      <img src="assets/images/delivery.jpg" alt="Grocery store">
+    </div>
+    <div class="about-content">
+      <h2>Who We Are</h2>
+      <p>
+        Welcome to our grocery store! We’re passionate about providing fresh, quality
+        products at affordable prices. From daily essentials to premium goods, our goal
+        is to make your shopping simple and enjoyable.
+      </p>
+      <p>
+        We pride ourselves on excellent customer service and timely delivery. Every
+        product is carefully selected to ensure you get the best value.
+      </p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h3>Our Mission</h3>
+    <p>
+      To serve our community with healthy, affordable, and fresh groceries — bringing
+      convenience right to your doorstep with trust and care.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Grocery Store. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

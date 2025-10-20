@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    header h2 {
+      color: #333;
+      font-size: 28px;
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .back-btn:hover {
+      background: #0056b3;
+    }
+
+    .checkout-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cart Items */
+    .cart-items {
+      flex: 1 1 60%;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      margin-left: 15px;
+    }
+
+    .cart-item-info h4 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .cart-item-info p {
+      color: #777;
+      font-size: 15px;
+    }
+
+    .cart-item-price {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Summary + Form */
+    .checkout-summary {
+      flex: 1 1 35%;
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+
+    .summary-box {
+      margin-bottom: 25px;
+    }
+
+    .summary-box h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .summary-total {
+      border-top: 2px solid #ddd;
+      margin-top: 10px;
+      padding-top: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #111;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    form input, form select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    form button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #218838;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      color: #28a745;
+      font-weight: 600;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      header {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      header h2 {
+        font-size: 22px;
+      }
+
+      .back-btn {
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .checkout-container {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .cart-item img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .cart-item-info h4 {
+        font-size: 16px;
+      }
+
+      form input, form select {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-btn" onclick="window.location.href='cart.html'">← Back to Cart</button>
+    <h2>Checkout</h2>
+  </header>
+
+  <div class="checkout-container">
+    <!-- Cart Items -->
+    <div class="cart-items" id="cart-items"></div>
+
+    <!-- Checkout Summary -->
+    <div class="checkout-summary">
+      <div class="summary-box">
+        <h3>Order Summary</h3>
+        <div id="summary-list"></div>
+        <div class="summary-total">
+          Total: ₦<span id="total-amount">0.00</span>
+        </div>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkout-form">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="text" id="address" placeholder="Delivery Address" required>
+        <select id="payment" required>
+          <option value="">Select Payment Method</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="momo">Mobile Money</option>
+          <option value="cash">Cash on Delivery</option>
+        </select>
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <p class="success-message" id="success-message">🎉 Order placed successfully! Redirecting to Home...</p>
+
+  <script>
+    // Load cart from localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    const summaryList = document.getElementById("summary-list");
+    const totalAmount = document.getElementById("total-amount");
+
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cart.forEach(item => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <p>Quantity: ${item.quantity}</p>
+          </div>
+          <div class="cart-item-price">₦${(item.price * item.quantity).toLocaleString()}</div>
+        `;
+        cartContainer.appendChild(div);
+
+        total += item.price * item.quantity;
+
+        // Summary
+        const summaryItem = document.createElement("div");
+        summaryItem.classList.add("summary-item");
+        summaryItem.innerHTML = `
+          <span>${item.name} (${item.quantity})</span>
+          <span>₦${(item.price * item.quantity).toLocaleString()}</span>
+        `;
+        summaryList.appendChild(summaryItem);
+      });
+
+      totalAmount.innerText = total.toLocaleString();
+    }
+
+    // Form Submission
+    const checkoutForm = document.getElementById("checkout-form");
+    checkoutForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Clear cart
+      localStorage.removeItem("cart");
+
+      // Hide form + show success
+      document.querySelector(".checkout-container").style.display = "none";
+      const successMessage = document.getElementById("success-message");
+      successMessage.style.display = "block";
+
+      // Redirect to home after 3 seconds
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

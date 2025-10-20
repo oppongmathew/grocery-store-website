@@ -1,0 +1,222 @@
+/* ---------------- Header ---------------- */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 48px;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 28px;
+  color: #f4a300;
+  letter-spacing: 0.4px;
+}
+
+/* ---------------- Search Bar ---------------- */
+.search-bar {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+}
+
+.search-bar input[type="search"] {
+  width: 100%;
+  padding: 10px 44px 10px 16px;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.search-bar .search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ---------------- Desktop Nav ---------------- */
+.main-nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;
+}
+
+.main-nav a.cart {
+  position: relative;
+}
+
+.main-nav .badge {
+  position: absolute;
+  top: -9px;
+  right: -10px;
+  background: #e53935;
+  color: white;
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+/* ---------------- Auth Buttons (Hero Section) ---------------- */
+.auth {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Outline (Login) */
+.btn-outline {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #008037;
+}
+
+/* Solid (Register) */
+.btn-solid {
+  background: #fff;
+  color: #008037;
+  border: 2px solid #fff;
+}
+
+.btn-solid:hover {
+  background: #f2f2f2;
+  color: #006b2f;
+}
+
+/* ---------------- Hamburger ---------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------------- Mobile Menu ---------------- */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: rgba(21, 87, 36, 0.98);
+  backdrop-filter: blur(6px);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  font-size: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  margin: 10px 0;
+  display: block;
+}
+
+.auth-mobile {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.auth-mobile .btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .search-bar,
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hide hero auth buttons on mobile */
+@media (max-width: 768px) {
+  .auth {
+    display: none !important;
+  }
+  .btn-solid {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff
+}
+}

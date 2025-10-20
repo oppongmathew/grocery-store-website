@@ -1,0 +1,9 @@
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}

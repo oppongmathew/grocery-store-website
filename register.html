@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Grocery Store</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .register-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 1000px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 20px;
+    }
+
+    /* Left side with image */
+    .register-left {
+      flex: 1;
+      background: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 30px;
+    }
+
+    .register-left h1 {
+      font-size: 30px;
+      background: rgba(0, 128, 0, 0.8);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    /* Right side form */
+    .register-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .register-right h2 {
+      color: green;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0e7d0e;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    a {
+      color: green;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .spinner {
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #2ecc71;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #2ecc71;
+      font-weight: 600;
+    }
+
+    /* ✅ Responsive Design */
+    @media (max-width: 768px) {
+      .register-container {
+        flex-direction: column;
+        width: 95%;
+        margin: 10px auto;
+      }
+
+      .register-left {
+        flex: none;
+        height: 200px;
+      }
+
+      .register-left h1 {
+        font-size: 24px;
+        padding: 8px 16px;
+      }
+
+      .register-right {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-left">
+      <h1>Welcome to Grocery Store</h1>
+    </div>
+
+    <div class="register-right">
+      <h2>Create Account</h2>
+      <form id="register-form">
+        <input type="text" id="fullname" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-message">Creating your account...</div>
+  </div>
+
+  <script>
+    const registerForm = document.getElementById("register-form");
+    const overlay = document.getElementById("loading-overlay");
+
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm-password").value;
+
+      if (password !== confirm) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      overlay.style.display = "flex";
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

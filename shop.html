@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Display</title>
+
+  <style>
+    /* Reset unwanted spacing & overflow */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden; /* Stop left-right scroll */
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+
+    h3 {
+      text-align: center;
+      background: green;
+      color: white;
+      padding: 15px 0;
+      font-size: 1.5rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h4 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .product p {
+      font-weight: bold;
+      color: green;
+    }
+
+    .quantity {
+      width: 60px;
+      padding: 5px;
+      margin-top: 5px;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .add-cart {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: green;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-cart:hover {
+      background: green;
+    }
+
+    .bottom-buttons {
+      text-align: center;
+      padding: 20px 0 40px;
+    }
+
+    .see-more,
+    .view-cart,
+    .go-home {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .see-more:hover,
+    .view-cart:hover,
+    .go-home:hover {
+      background: green;
+    }
+    header {
+      background-color: #28a745;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Make sure layout fits smaller devices */
+    @media (max-width: 768px) {
+      .product img {
+        height: 150px;
+      }
+
+      .see-more,
+      .view-cart,
+      .go-home {
+        display: block;
+        width: 80%;
+        margin: 15px auto;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header nav {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+   <h1>GROCERY DISPLAY</h1>
+  <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="cart.html">🛒 View Cart</a>
+    </nav>
+  </header>
+
+  <div class="product-grid">
+    <div class="product">
+      <img src="assets/images/milo.jpg" alt="Milo">
+      <h4>Milo</h4>
+      <p>₦3000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/tomato.jpg" alt="Tomatoes">
+      <h4>Tomatoes</h4>
+      <p>₦500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/chicken.jpg" alt="Chicken">
+      <h4>Chicken</h4>
+      <p>₦1500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/watermelon.jpg" alt="Watermelon">
+      <h4>Watermelon</h4>
+      <p>₦1300.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/banana.jpg" alt="Banana">
+      <h4>Banana</h4>
+      <p>₦2500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/cone flakes.jpg" alt="Cornflakes">
+      <h4>Cornflakes</h4>
+      <p>₦1700.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/watermelon.jpg" alt="Watermelon">
+      <h4>Watermelon</h4>
+      <p>₦1300.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/yam flour.jpg" alt="Banana">
+      <h4>Yam flour</h4>
+      <p>₦5500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/fish.jpg" alt="Banana">
+      <h4>Fish</h4>
+      <p>₦4500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/grapes.jpg" alt="Banana">
+      <h4>Grapes</h4>
+      <p>₦800.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/fish fillets.jpg" alt="Banana">
+      <h4>Fish fillets</h4>
+      <p>₦3000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/Apple.jpg" alt="apple">
+      <h4>Apple</h4>
+      <p>₦400.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+   <div class="product">
+      <img src="assets/images/Bag of Rice.jpg" alt="Rice">
+      <h4>Bag of Rice</h4>
+      <p>₦5200.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/Beef Meat.jpg" alt="meat">
+      <h4>Beef Meat</h4>
+      <p>₦4300.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/beverages.jpg" alt="beverages">
+      <h4>Beverages</h4>
+      <p>₦2000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/Coca Cola.jpg" alt="cola">
+      <h4>Coca Cola</h4>
+      <p>₦600.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/froozen food.jpg" alt="froozen">
+      <h4>froozen Food</h4>
+      <p>₦2500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/fruits.jpg" alt="Fruits">
+      <h4>Fruits</h4>
+      <p>₦3000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/noodles.jpg" alt="noodles">
+      <h4>Noodles</h4>
+      <p>₦500.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/oil.webp" alt="oil">
+      <h4>Oil</h4>
+      <p>₦750.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/Pork.jpg" alt="Pork">
+      <h4>Pork</h4>
+      <p>₦7000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/snack.avif" alt="Banana">
+      <h4>Snacks</h4>
+      <p>₦450.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="assets/images/Spinach.jpg" alt="Spinach">
+      <h4>Spinach</h4>
+      <p>₦8000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+    
+    <div class="product">
+      <img src="assets/images/vegetables.jpg" alt="vegetables">
+      <h4>Vegetables</h4>
+      <p>₦3000.00</p>
+      <input type="number" min="1" value="1" class="quantity">
+      <button class="add-cart">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="bottom-buttons">
+    <a href="#" class="see-more">See More</a>
+    <a href="cart.html" class="view-cart">View Cart</a>
+    <a href="index.html" class="go-home">Go Home</a>
+  </div>
+
+  <script>
+    const cartButtons = document.querySelectorAll(".add-cart");
+    cartButtons.forEach(button => {
+      button.addEventListener("click", e => {
+        const product = e.target.closest(".product");
+        const name = product.querySelector("h4").textContent;
+        const price = parseFloat(product.querySelector("p").textContent.replace("₦", ""));
+        const image = product.querySelector("img").src;
+        const quantity = parseInt(product.querySelector(".quantity").value);
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity += quantity;
+        } else {
+          cart.push({ name, price, image, quantity });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+
+</body>
+</html>
